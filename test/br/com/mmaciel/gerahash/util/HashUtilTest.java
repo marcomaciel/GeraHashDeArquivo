@@ -7,8 +7,8 @@ import java.security.NoSuchAlgorithmException;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.mmaciel.gerahash.util.Algoritimo;
-import br.mmaciel.gerahash.util.HashUtil;
+import br.com.mmaciel.gerahash.util.Algoritimo;
+import br.com.mmaciel.gerahash.util.HashUtil;
 
 public class HashUtilTest {
 

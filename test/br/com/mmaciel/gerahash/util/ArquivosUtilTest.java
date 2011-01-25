@@ -6,7 +6,7 @@ import java.io.File;
 
 import org.junit.Test;
 
-import br.mmaciel.gerahash.util.ArquivosUtil;
+import br.com.mmaciel.gerahash.util.ArquivosUtil;
 
 public class ArquivosUtilTest {
 

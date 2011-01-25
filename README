@@ -1,0 +1,1 @@
+Programa Java para gerar o hash de uma lista de arquivos de um diretório, gravando um arquivo no mesmo diretório com o código hash do arquivo associado.

@@ -18,20 +18,21 @@ public class GeraCRC extends javax.swing.JFrame {
 
     public static void main(String args[]) throws NoSuchAlgorithmException, FileNotFoundException  {
 
-    	String caminhoDoDiretorio = "c:/java/lib";
-    	String extensaoDoArquivoDeSaida = ".md5";
+    	String caminhoDoDiretorio = "c:/temp";    	
+    	Algoritimo algoritimoHash = Algoritimo.MD5; 
+    	String extensaoDoArquivoDeSaida = algoritimoHash.valor();
     	
     	HashUtil hashUtil = new HashUtil();    	
     	ArquivosUtil arqUtil = new ArquivosUtil();
     	File[] listaDeArquivos = arqUtil.listaArquivosDoDiretorio(caminhoDoDiretorio,".jar");
     	
-    	System.out.println(hashUtil.geraHashDoTexto("Texto",Algoritimo.SHA_512));
+    	System.out.println(hashUtil.geraHashDoTexto("Texto",algoritimoHash));
     	    	    	
 		for ( int i = 0; i < listaDeArquivos.length; i++ ){									
 			String arquivo = listaDeArquivos[i].getAbsolutePath();			
-			String hash = hashUtil.geraHashDoArquivo(arquivo, Algoritimo.MD5);						
+			String hash = hashUtil.geraHashDoArquivo(arquivo, algoritimoHash);						
 			System.out.println(listaDeArquivos[i].getName() + " -> "+ hash);			
-			String arquivoDeSaida = arquivo + extensaoDoArquivoDeSaida;
+			String arquivoDeSaida = arquivo + "." +extensaoDoArquivoDeSaida;
 			arqUtil.gravaArquivo(arquivoDeSaida, hash);		
 		}
     }
